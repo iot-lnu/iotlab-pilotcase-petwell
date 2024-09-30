@@ -25,7 +25,7 @@ The table below shows the data collected for the different acetone concentration
 
 The image below shows the resistance change over time when the sensor was exposed to clean air. The average resistance here was X 
 
-![alt text](images/clean-air-test1.png)
+![alt text](images/air-test1.png)
 
 Whereas the image below shows the resistance change over time when the sensor was exposed to acetone. The average resistance here was X
 
