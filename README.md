@@ -1,4 +1,4 @@
-# PetWellTech 
+v# PetWellTech 
 
 PetWellTech develops hardware and software for monitoring pet health and associated activities.
 
@@ -14,26 +14,33 @@ Documentation for the BME688 sensor can be found [here](https://www.bosch-sensor
 ## Collecting data from the BME688 sensor 
 
 ### Test 1 
-Controlled environment in a plastic box. The concentration of acetone was XX.XX *Add calculation here*. The volume used was 0.01 ml in the box. 
+Controlled environment in a plastic box. 
+Volume of the box is 0,013 cubic meters. The amount of acetone injected was 0.01 ml 
+The concentration of acetone was 0.769 ppm
+
+Since 1 m\(^3\) of acetone in 1 m\(^3\) of air would be 1,000,000 ppm (by volume), we can convert the concentration to ppm:
+
+Concentration (ppm) = 7.69 × 10^-7 × 1,000,000 ≈ 0.769 ppm
+
 The acetone was added to the enclosed box at the beginning of the test. There was no more acetone added during the test. 
 [Image of the setup]
 The table below shows the data collected for the different acetone concentrations and for clean air, as well as the duration of the data collection.
 
-|               | \*Temperature (°C) | \*Humidity (%) | \*Pressure (hPa) | \*Gas Resistance (Ω) | Duration (hours) |
+|               | \*Temperature (°C) | \*Humidity (%) | \*Pressure (hPa) | \*Gas Resistance (Ω) | Duration (mins) |
 | ------------- | ------------------ | -------------- | ---------------- | --------------------- | ---------------- |
-| Air training  |     3.501277e+01   | 1.925969e+01   | 1.020081e+03     | 3.489649e+07          | xxx      |
-|  Air test     |     3.459404e+01   | 1.943559e+01   | 1.018670e+03     | 3.361244e+07          | xxx      |
-|Acetone training| 3.635105e+01       | 2.050594e+01   | 1.021596e+03     | 1.580791e+07          | xxx        |
-| Acetone test  | 3.543839e+01       | 1.962744e+01   |  1.018924e+03    | 1.418220e+07          | xxx|
+| Air training  |     3.501277e+01   | 1.925969e+01   | 1.020081e+03     | 3.489649e+07          | 45      |
+|  Air test     |     3.459404e+01   | 1.943559e+01   | 1.018670e+03     | 3.361244e+07          | 45      |
+|Acetone training| 3.635105e+01       | 2.050594e+01   | 1.021596e+03     | 1.580791e+07          | 15       |
+| Acetone test  | 3.543839e+01       | 1.962744e+01   |  1.018924e+03    | 1.418220e+07          | 15 |
 
 #### Formatted data (observe gas resistance in Mega ohms) 
 
-|                 | Temperature (°C) | Humidity (%) | Pressure (hPa) | Gas Resistance (MΩ) | Duration (hours) |
+|                 | Temperature (°C) | Humidity (%) | Pressure (hPa) | Gas Resistance (MΩ) | Duration (mins) |
 | --------------- | ---------------- | ------------ | -------------- | ------------------- | ---------------- |
-| Air training    |        35.01     |      19.26   |     1020.08    |         34.90       |       xxx        |
-| Air test        |        34.59     |      19.44   |     1018.67    |         33.61       |       xxx        |
-| Acetone training|        36.35     |      20.51   |     1021.60    |         15.81       |       xxx        |
-| Acetone test    |        35.44     |      19.63   |     1018.92    |         14.18       |       xxx        |
+| Air training    |        35.01     |      19.26   |     1020.08    |         34.90       |       45        |
+| Air test        |        34.59     |      19.44   |     1018.67    |         33.61       |       45        |
+| Acetone training|        36.35     |      20.51   |     1021.60    |         15.81       |       15        |
+| Acetone test    |        35.44     |      19.63   |     1018.92    |         14.18       |       15        |
 
 The image below shows the resistance change over time when the sensor was exposed to acetone and air. The highlighted area shows the resistance change when the sensor was exposed to acetone for the first cycle. WWhen the sensor was exposed to air the resistance decreased notably. The average resistance here was X
 ![alt text](images/graf_test1-10_2_hour.png)
