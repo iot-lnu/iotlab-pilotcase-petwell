@@ -24,8 +24,13 @@ Concentration (ppm) = 7.69 × 10^-7 × 1,000,000 ≈ 0.769 ppm
 
 The acetone was added to the enclosed box using a small syringe at the beginning of the test. There was no more acetone added during the test.
 
-![Box](images/box.JPG) 
-![Box](images/syringe.JPG) ![Box](images/aceton.JPG) 
+### The plastic test box
+<img src="images/box.JPG" width="75%">
+
+### Syringe & chemically clean acetone source
+
+<img src="images/syringe.JPG" width="25%" > <img src="images/aceton.JPG" width="25%">
+
 
 The table below shows the data collected for the different acetone concentrations and for clean air, as well as the duration of the data collection.
 
