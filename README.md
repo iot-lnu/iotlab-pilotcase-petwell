@@ -1,4 +1,4 @@
-v# PetWellTech 
+# PetWellTech 
 
 PetWellTech develops hardware and software for monitoring pet health and associated activities.
 
@@ -22,8 +22,11 @@ Since 1 m\(^3\) of acetone in 1 m\(^3\) of air would be 1,000,000 ppm (by volume
 
 Concentration (ppm) = 7.69 × 10^-7 × 1,000,000 ≈ 0.769 ppm
 
-The acetone was added to the enclosed box at the beginning of the test. There was no more acetone added during the test. 
-[Image of the setup]
+The acetone was added to the enclosed box using a small syringe at the beginning of the test. There was no more acetone added during the test.
+
+![Box](images/box.JPG) 
+![Box](images/syringe.JPG) ![Box](images/aceton.JPG) 
+
 The table below shows the data collected for the different acetone concentrations and for clean air, as well as the duration of the data collection.
 
 |               | \*Temperature (°C) | \*Humidity (%) | \*Pressure (hPa) | \*Gas Resistance (Ω) | Duration (mins) |
