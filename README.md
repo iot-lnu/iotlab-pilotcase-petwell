@@ -16,11 +16,27 @@ Documentation for the BME688 sensor can be found [here](https://www.bosch-sensor
 ### Test 1 
 Controlled environment in a plastic box. 
 Volume of the box is 0,013 cubic meters. The amount of acetone injected was 0.01 ml 
-The concentration of acetone was 0.769 ppm
 
-Since 1 m\(^3\) of acetone in 1 m\(^3\) of air would be 1,000,000 ppm (by volume), we can convert the concentration to ppm:
+- **Density of acetone**: 0.791 g/ml.
+- **Molecular weight of acetone**: 58.08 g/mol.
+- **Temperature**: 35°C (converted to Kelvin: 308.15 K).
+- **Gas constant**: 8.3145 J/(mol⋅K).
 
-Concentration (ppm) = 7.69 × 10^-7 × 1,000,000 ≈ 0.769 ppm
+### Steps:
+
+1. **Convert Liquid Volume to Mass**:
+   - Mass of acetone = 0.01 ml x 0.791 g/ml = 0.00791 g
+
+2. **Convert Mass to Moles**:
+   - Moles of acetone = mass / molecular weight = 0.00791 g / 58.08 g/mol ≈ 0.000136 mol
+
+3. **Use Ideal Gas Law to Find Volume of Gas at 35°C**:
+   - Calculate volume using V = nRT / p, assuming standard pressure (101325 Pa). For example using [this calculator for ideal gas law](https://www.omnicalculator.com/physics/ideal-gas-law?calculatorResult=H4sIAAAAAAAAA71X2W7cNhT9FUNP48BVRFHUYqABWqcFjCLJg9u8BIZBj2hZDbWAy6BGMP%2BeS2qjPPIsbhC9jLjcc%2B5%2BNd88VhdlzW4UVcy7%2FOatKV9rDov8MxUlvedMfqQVk97lF69qYOVdmF8q7ioqpXd74a0faV0sXd80XFfMXmnqvFRlU0tDUdatVrMXC%2BwH5nVDuQZFuq2zd2cB8OVMsbWr0aTM7dZVx0fPIPr9AzijMQDWCialFswPXahh9%2Bzdry8jDZc6pYw6eKbOIUUGFTq%2F%2BZEr3O3tpR%2FcDQiKVS0TVBk7iAvjHBisX8IE%2B4i8hOjcBljAbbTajdi%2B6FwMzEpoBnqJsiiYKOtiuGySZTTPWwjmwZgdS1FQeQd5KBWtlbcT6AMBfS3JlAV7Qn66k9wM2ZsLr9V7J4EO58frqExW6dJtBm6a2WO4vGFCQvf4sxEV9CbbRKzrTL8aT6%2BHcyBZrdBbFNjn%2FM1KsAcmWL1mn42G5%2BeeC%2FpJq0mul3mz2pWZ5eYe5o74fAniRdoVsqRLnGMO7mEMEA7JKWZaJY3Qoprz%2BO9z8gmMizR9mv7UMAItA5mrPXOuV6sr327eLcw99p8S9D1V1Gav%2FC3fUODJvcsHyiVUQCk%2FNPclZ%2BOGlkx0tupaiaerJjf1cPOHsUMLo%2BWTXf%2FlbNw8VfcNh%2B2vAnY5TFpNC9aLstqzqNcmWCXl%2F9Slkj2dsfOhc4jZfs9aVucG8QNtuyrjzfrrkvWzAr01Tqg15demPG3ez85hbcrXS32MoigOY5QigsMosMGpQMaAdwWrHv8FAO%2F3svioq3tmDBrm0nNxG6bO7dZhE1CtOe9ahreYqEdTYuL1vad%2FfV7dRyOR1A%2FSEWxczSv3aDQ0IqFhgpyIkPjZBNIttkMYD4R77lDHhotnRXE7dOlPNX9yh8IwB35yqvResgSBb6s%2FAcNPQnbktv8nHwCHpCjCQRQnCY5CjBBJUIhxlKIsIjEiGU7iGKMkDOMsIQgnJIarBCEMIlEaT%2BH7QViLpXSMOxCOgwgnaQjcGUmyNAaf45iQFEcJkEchCrIsRkma4RA0gidLcBKQIAhxlmauIT8GzS2rrkzsJDst1L3MdreDDA3hJDjcQU3jzM1DHEWvykMjt7VfQIKtm5KPf9GoVo2kG9ZV27rhnLaS5dd5X3%2BPjLd%2Fw3Ry2%2FxSY5eM2286OzZuuC5shrj%2BbUVZUWGmkhHKqcjvqKoa2T7CUJ0P8OlqxRca83R85XY1R6rY7cHTaQEH1hnfAUxqtSawDgAA). 
+   - Volume ≈ 3.44 ml  
+
+4. **Convert to ppm**:
+   - Concentration (ppm) = (Volume of gas / Volume of box) x 1,000,000
+   - Concentration ≈ (3.44 ml / 13000 ml) x 1,000,000 ≈ 265 ppm
 
 The acetone was added to the enclosed box using a small syringe at the beginning of the test. There was no more acetone added during the test.
 
