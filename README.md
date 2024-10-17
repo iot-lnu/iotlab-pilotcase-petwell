@@ -5,11 +5,13 @@ PetWellTech develops hardware and software for monitoring pet health and associa
 The goal of the pilot project is to investigate possibilities of monitoring VOCs in dog breath with hardware available on the market and build a prototype solution 
 that can detect for example acetone in dog breath. 
 
-# Sensors investigated 
-| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/image-4.png" width="145" height="100"> | "Electronic nose", Bosch BME688 sensor | A [development kit](https://www.sparkfun.com/products/19630) consisting of 8 individual BME688 sensors was used to collect data along with a [Thing Plus - ESP32 WROOM (Micro-B)](https://www.sparkfun.com/products/15663) |
-| --------------------------------------------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+# Sensors Investigated
 
-Documentation for the BME688 sensor can be found [here](https://www.bosch-sensortec.com/software/bme/docs/overview/getting-started.html).
+| Image                                                                                                                 | Sensor Name                                | Description                                                                                                                                                                                                                                                               |
+|-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/image-4.png" width="145" height="100">    | "Electronic nose", Bosch BME688 sensor     | A [development kit](https://www.sparkfun.com/products/19630) consisting of 8 individual BME688 sensors was used to collect data along with a [Thing Plus - ESP32 WROOM (Micro-B)](https://www.sparkfun.com/products/15663). Documentation for the BME688 sensor can be found [here](https://www.bosch-sensortec.com/software/bme/docs/overview/getting-started.html). |
+| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/bme280.png" width="145" height="100">     | SparkFun Atmospheric Sensor Breakout - BME280 | [Getting started guide](https://learn.sparkfun.com/tutorials/sparkfun-bme280-breakout-hookup-guide)                                                                                                                                                                     |
+| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/ccs811.png" width="145" height="100">     | Adafruit CCS811 Air Quality Sensor         | [Documentation](https://learn.adafruit.com/adafruit-ccs811-air-quality-sensor/overview)                                                                                                                                                                                  |
 
 ## Collecting data from the BME688 sensor 
 
