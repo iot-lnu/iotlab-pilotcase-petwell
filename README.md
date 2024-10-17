@@ -10,8 +10,8 @@ that can detect for example acetone in dog breath.
 | Image                                                                                                                 | Sensor Name                                | Description                                                                                                                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/image-4.png" width="145" height="100">    | "Electronic nose", Bosch BME688 sensor     | A [development kit](https://www.sparkfun.com/products/19630) consisting of 8 individual BME688 sensors was used to collect data along with a [Thing Plus - ESP32 WROOM (Micro-B)](https://www.sparkfun.com/products/15663). Documentation for the BME688 sensor can be found [here](https://www.bosch-sensortec.com/software/bme/docs/overview/getting-started.html). |
-| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/bme280.png" width="145" height="100">     | SparkFun Atmospheric Sensor Breakout - BME280 | [Getting started guide](https://learn.sparkfun.com/tutorials/sparkfun-bme280-breakout-hookup-guide)                                                                                                                                                                     |
-| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/ccs811.png" width="145" height="100">     | Adafruit CCS811 Air Quality Sensor         | [Documentation](https://learn.adafruit.com/adafruit-ccs811-air-quality-sensor/overview)                                                                                                                                                                                  |
+| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/bme280.jpg" width="145" height="100">     | SparkFun Atmospheric Sensor Breakout - BME280 | [Getting started guide](https://learn.sparkfun.com/tutorials/sparkfun-bme280-breakout-hookup-guide)                                                                                                                                                                     |
+| <img src="https://github.com/iot-lnu/iotlab-pilotcase-jemac/raw/main/images/ccs811.jpg" width="145" height="100">     | Adafruit CCS811 Air Quality Sensor         | [Documentation](https://learn.adafruit.com/adafruit-ccs811-air-quality-sensor/overview)                                                                                                                                                                                  |
 
 ## Collecting data from the BME688 sensor 
 
@@ -49,6 +49,11 @@ The acetone was added to the enclosed box using a small syringe at the beginning
 
 <img src="images/syringe.JPG" width="25%" > <img src="images/aceton.JPG" width="25%">
 
+
+<img src="images/box.JPG" width="145" height="100">
+<img src="images/syringe.JPG" width="145" height="100">
+<img src="images/aceton.JPG" width="145" height="100">
+![Box](images/syringe.JPG) ![Box](images/aceton.JPG) 
 
 The table below shows the data collected for the different acetone concentrations and for clean air, as well as the duration of the data collection.
 
