@@ -13,9 +13,10 @@ that can detect for example acetone in dog breath.
 | <img src="images/bme280.jpg" width="200">     | SparkFun Atmospheric Sensor Breakout - BME280 | [Getting started guide](https://learn.sparkfun.com/tutorials/sparkfun-bme280-breakout-hookup-guide)                                                                                                                                                                     |
 | <img src="images/ccs811.jpg" width="200">     | Adafruit CCS811 Air Quality Sensor         | [Documentation](https://learn.adafruit.com/adafruit-ccs811-air-quality-sensor/overview)                                                                                                                                                                                  |
 
+Theses sensors works by detecting total volatile organic compounds (TVOC) in the air. TVOC stands for Total Volatile Organic Compounds, representing the collective concentration of multiple carbon-based chemicals that evaporate at room temperature.
+
 ## Collecting data from the BME688 sensor 
 
-### Test 1 
 Controlled environment in a plastic box. 
 Volume of the box is 0,013 cubic meters. The amount of acetone injected was 0.01 ml 
 
@@ -49,11 +50,7 @@ The acetone was added to the enclosed box using a small syringe at the beginning
 
 <img src="images/syringe.JPG" width="25%" > <img src="images/aceton.JPG" width="25%">
 
-
-<img src="images/box.JPG" width="145" height="100">
-<img src="images/syringe.JPG" width="145" height="100">
-<img src="images/aceton.JPG" width="145" height="100">
-![Box](images/syringe.JPG) ![Box](images/aceton.JPG) 
+### Test 1
 
 The table below shows the data collected for the different acetone concentrations and for clean air, as well as the duration of the data collection.
 
@@ -64,7 +61,7 @@ The table below shows the data collected for the different acetone concentration
 |Acetone training| 3.635105e+01       | 2.050594e+01   | 1.021596e+03     | 1.580791e+07          | 15       |
 | Acetone test  | 3.543839e+01       | 1.962744e+01   |  1.018924e+03    | 1.418220e+07          | 15 |
 
-#### Formatted data (observe gas resistance in Mega ohms) 
+#### Formatted data (observe gas resistance in Mega ohms)
 
 |                 | Temperature (°C) | Humidity (%) | Pressure (hPa) | Gas Resistance (MΩ) | Duration (mins) |
 | --------------- | ---------------- | ------------ | -------------- | ------------------- | ---------------- |
@@ -80,8 +77,9 @@ Compared to the reference air, the resistance change for acetone was significant
 
 #### AI training
 
-Using the BME studio software an algorithm was trained to detect acetone. The training data set was used to train the data with a 70/30 split. 
+Using the BME studio software an algorithm was trained to detect acetone. The training data set was used to train the data with a 70/30 split.
 The image below shows the confusion matrix for the training data set.
+
 ![confusion matrix](images/test2_10_training.png)
 
 The table below shows the accuracy of the training data set.
@@ -91,6 +89,7 @@ The table below shows the accuracy of the training data set.
 | 96.01%   | 96.11%   | 4.01%          |
 
 #### AI testing
+
 USing the BME studio software the trained algorithm was tested with the test data set. The image below shows the confusion matrix for the test data set.
 ![confusion matrix](images/test_2_10_test.png)
 This show that the algorithm was able to detect acetone with a high accuracy.
@@ -101,9 +100,144 @@ This show that the algorithm was able to detect acetone with a high accuracy.
 
 ## Test 2
 
+### Larger Test Box
 
-# Relevant publications 
+To achieve lower concentrations of acetone, a larger box constructed from acrylic plastic was used. The dimensions of the box were 0.6 x 0.6 x 0.6 meters, resulting in a volume of 0.216 cubic meters. A small fan was used to circulate the air inside the box.
+
+![Big box outside](images/large_box.jpg)
+
+![Big box inside](images/large_box_2.jpg)
+
+Using calculations similar to those before, with a box volume of 0.216 cubic meters and 0.002 ml of acetone, the concentration of acetone in the box was approximately 30 ppm. Two tests were conducted with this same concentration of acetone.
+
+The table below shows the data collected for different acetone concentrations and for clean air, as well as the duration of the data collection:
+
+The image below illustrates the resistance change over time when the sensor was exposed to acetone and air.
+
+##### Resistance Graph from the First Run of Test 2
+
+![Test 2 run 1](/images/test_2_run1_resistance.png)
+
+![Test 2 run 2](/images/test_2_run2_resistance.png)
+
+#### AI Training
+
+Using the BME Studio software, an algorithm was trained to detect acetone. The training dataset was split into a 70/30 ratio for training and validation. 
+
+The image below shows the confusion matrix for the training dataset.
+
+![Confusion matrix](images/Screenshot%202024-11-01%20095301.png)
+
+The table below shows the accuracy and F1 score for the training dataset.
+
+| Metric          | Score |
+| --------------- | ----- |
+| Accuracy        | 83.79%|
+| F1 Score        | 84.31%|
+| False Positive  | 16.18%|
+
+#### AI Testing
+
+Using BME Studio software, the trained algorithm was tested with the test dataset. The image below shows the confusion matrix for the test dataset.
+
+![Confusion matrix](/images/Screenshot%202024-11-01%20095403.png)
+
+This shows that the algorithm was able to detect acetone with high accuracy.
+
+| Metric          | Score |
+| --------------- | ----- |
+| Accuracy        | 77.21%|
+| F1 Score        | 76.17%|
+| False Positive  | 22.20%|
+
+### Adafruit CCS811 and SparkFun BME280 Sensors
+
+![The CCS811 and BME280 on board](images/CCS811_BME280.png)
+
+For the tests, both the Adafruit CCS811 and SparkFun BME280 sensors were placed inside the same box as the BME688 sensor. The data were then sent to an Influx database. The reason for using these sensors was to determine if they were capable of detecting acetone. Both sensors appeared to detect acetone as their resistances changed when acetone was added.
+
+However, inconsistent changes in resistance were observed at the same acetone concentration. It was also noted that with the SparkFun sensor, there was a more substantial change in resistance when simply sitting close to the sensor compared to when it was in the box exposed to acetone. The image below shows the resistance change over time.
+
+These graf show the resistance change over time for the BME280 and CCS811 sensors.
+
+First in the box with air and then with acetone in the box. The first increase in tresistance is when the acetone is added to the box. The second increase is when the box is opened and the sensor is exposed to the air. As show in the graf the resistance change is quite simmilear for the air and acetone. This makes it hard to detect specificly acetone with these sensors. This was at a relative high concentration of 30 ppm.
+
+**CCS811 sensor**
+![Graf from influx db BME280](images/Data_BME280_influx.png)
+**BME280 sensor**
+![Graf from influx db CSS811](images/Data_CCS811_influx.png)
+
+#### Result Test 2
+
+The Bosch sensor successfully detected acetone in the box, the resistance changed slightly upon exposure to acetone. The trained AI algorithm also detected acetone but with notably lower accuracy than in previous tests.
+
+The Adafruit CCS811 and SparkFun BME280 sensors were also able to detect acetone in the box, but they demonstrated inconsistent resistance changes and reactions to different room air conditions.
+
+## Test 3
+
+For the third test, the same setup as in Test 2 was used. The acetone was diluted with water to achieve a lower concentration of acetone in the box. The concentration for this test was 5 ppm.
+
+The table below shows the data collected for this test.
+
+![Test 3](images/recistance_3.png)
+
+#### AI Training
+
+An algorithm was trained using the BME Studio software, applying the same method as before.
+
+The image below displays the confusion matrix for the training dataset.
+
+![Confusion matrix](images/matrix_training_3.png)
+
+The table below shows the accuracy and F1 score for the training dataset.
+
+| Metric          | Score |
+| --------------- | ----- |
+| Accuracy        | 83.79%|
+| F1 Score        | 84.31%|
+| False Positive  | 16.18%|
+
+#### AI Testing
+
+The trained algorithm was tested with the test dataset using the BME Studio software. The image below shows the confusion matrix for the test dataset.
+
+![Confusion matrix](images/matrix_test_3.png)
+
+| Metric          | Score |
+| --------------- | ----- |
+| Accuracy        | 63.90%|
+| F1 Score        | 71.46%|
+| False Positive  | 23.66%|
+
+The testing result was highly dependent on the air and acetone data. Using air and acetone data from different days yielded varying results. In the image above the air sampel was taken the same day as the test and the result was 63.90%. We also tried using one air sample from the day before and two days before. The result varied from 59% to 83%. This indicates that the sensor is more sensitive to the air quality than the acetone concentration. This makes it difficult to detect acetone in a room with varying air quality.
+
+### Conclusion: Tests 1 - 3
+
+**Test 1:**
+
+- The Bosch BME688 sensor worked well in a small box, clearly picking up changes when acetone was introduced. This suggests that the sensor can effectively detect acetone in controlled settings. The Artificial Intelligence (AI) model trained with this data performed well, identifying acetone with high accuracy in both training (96.01%) and testing (91.54%).
+
+**Test 2:**
+
+- When tested in a larger box with lower acetone levels (around 30 ppm), the BME688 sensor continued to detect acetone, but the AI's success rate dropped (Training: 83.79%, Testing: 77.21%). This could be because of the reduced concentration of acetone and differences in air quality.
+- The Adafruit CCS811 and SparkFun BME280 sensors struggled to reliably detect acetone, showing inconsistent changes in resistance at the same concentration levels.
+
+**Test 3:**
+
+- At very low acetone concentrations (5 ppm), results varied greatly depending on changes in air quality. The AI model's accuracy ranged from 59% to 83%, showing that it struggled to maintain consistency in different conditions.
+
+**Overall Conclusion:**
+The Bosch BME688 sensor shows was decent at detecting acetone, especially at higher concentrations. However, its sensitivity to changes in overall air quality will affect its reliability in everyday settings. The Adafruit CCS811 and SparkFun BME280 sensors were less effective at distinguishing acetone from other elements in the air.
+
+## Alternative sensor
+
+Thes previsly tested sensor works by detecting total volatile organic compounds (TVOC) in the air. TVOC stands for Total Volatile Organic Compounds, representing the collective concentration of multiple carbon-based chemicals that evaporate at room temperature. Commonly found in household products like paints and cleaning supplies, TVOC sensors are useful for monitoring overall changes in air quality due to these compounds. However, they do not identify or measure specific gases. For detecting specific gases, such as aceton specialized sensors are necessary, as they provide precise measurement and identification of individual substances.
+
+The [TGS1820](https://www.figarosensor.com/product/feature/tgs1820.html) is a hot wire semiconductor gas sensor developed by Figaro Engineering Inc. for the detection of acetone. It features high sensitivity and selectivity to acetone with minimal interference from ethanol and hydrogen and other gases, making it suitable for applications like breath acetone analysis.The sensor has typical detection range of 1 to 20 ppm acetone. Read more about the sensor [here](https://www.figarosensor.com/product/feature/tgs1820.html).
+
+With this sensor it can be possible to detect acetone in the air with a higher accuracy than the previously tested sensors. Since it is specifically designed for acetone detection, it is expected to provide more reliable and consistent results.  
+
+## Relevant publications
 
 1. Z. Wang, C. Wang and P. Lathan, Breath Acetone Analysis of Diabetic Dogs Using a Cavity Ringdown Breath Analyzer, in IEEE Sensors Journal, [doi: 10.1109/JSEN.2013.2293705](https://ieeexplore.ieee.org/document/6678180).
 2. Saasa V, Malwela T, Beukes M, Mokgotho M, Liu CP, Mwakikunga B. Sensing Technologies for Detection of Acetone in Human Breath for Diabetes Diagnosis and Monitoring. Diagnostics (Basel). 2018 Jan 31;8(1):12. [doi: 10.3390/diagnostics8010012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5871995/).  
- 
