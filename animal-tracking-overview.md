@@ -46,7 +46,7 @@ främst en accelerometer (som ofta kombineras med en gyroskopfunktion), vilka m�
 
 Genom att analysera dessa rörelsemönster kan systemet avgöra när kon äter samt när den idisslar.
 
-Läs mer: [The RumiWatch System: Automated Feeding and Health Monitoring for Dairy Cows](https://www.agrarforschungschweiz.ch/en/2021/03/the-rumiwatch-system-automated-feeding-and-health-monitoring-for-dairy-cows/)
+- Läs mer: [The RumiWatch System: Automated Feeding and Health Monitoring for Dairy Cows](https://www.agrarforschungschweiz.ch/en/2021/03/the-rumiwatch-system-automated-feeding-and-health-monitoring-for-dairy-cows/)
 ---
 
 ## Hundar (PetPace)
