@@ -4,9 +4,7 @@ Här följer en översikt över sensorer som används i moderna djurhalsband fö
 
 ---
 
-## Kor
-
-Det finns två huvudsakliga system för att övervaka kornas hälsa och beteende:
+## Automatiserad foder- och hälsövervakning för mjölkkor
 
 ### Afimilk (Israel)
 - IsraelAgri. Afimilk sensors can gather data on the amount of milk that each cow produces.  
@@ -39,6 +37,16 @@ Telefon: +46(0)41519586 / +46(0)705803328
 E-post: kim.selim@skanesemin.se  
 [Website](#)
 
+###  RumiWatch Systemet
+
+Systemet består av ett halsband (RumiWatch Halter), en stegräknare och ett utvärteringsprogram som tillsammans ger viktig information om både foderhantering och djurhälsa.
+
+RumiWatch-haltern är designad för att exakt registrera kons ät- och idisslingsbeteenden. I själva haltern ingår avancerade rörelsesensorer, 
+främst en accelerometer (som ofta kombineras med en gyroskopfunktion), vilka mäter huvud- och käkrörelserna. 
+
+Genom att analysera dessa rörelsemönster kan systemet avgöra när kon äter samt när den idisslar.
+
+Läs mer: [The RumiWatch System: Automated Feeding and Health Monitoring for Dairy Cows](https://www.agrarforschungschweiz.ch/en/2021/03/the-rumiwatch-system-automated-feeding-and-health-monitoring-for-dairy-cows/)
 ---
 
 ## Hundar (PetPace)
